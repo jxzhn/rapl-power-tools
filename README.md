@@ -31,11 +31,11 @@ For some specific usage, there are several macro `#define` in code which are com
 * `CPU_FREQUENCY_NEEDED`: This macro define indicates the program cocurrently sampling CPU frequency data. Should be used with `OUTPUT_TO_FILE`, and the result would be in `freqlog_indexNumber.txt`. Notice that the function is completed by using pipe to call `cat` command to read /proc/cpuinfo, and this can cause the sampling interval is greater than expected (could be 5-20ms, depends on machine). Frequency of every cores would be recorded.
 * `ALWAYS_FLUSH`: In some scenarios, you may not exit the program normally. (Like `kill`) If some output contents is still in output cache, some information would be missing. This macro define indicates the program to flush output cache every output line to avoid missing information in abnormal exit.
 
-#### 2. auto_collect
+#### 2. autotest.sh
 
-In this directory there are two scripts for automatically collecting the HPL performance information under different RAPL power limitation.
+In this a scripts for automatically collecting the HPL performance information under different RAPL power limitation.
 
-To use there scripts, you run both of them in two shell terminal. (It's recommended to run `auto_run.sh` firstly.) Notice that it could be necessary to place these two scripts, read_power tool and HPL program in the same directory.
+Notice that it could be necessary to place these two scripts, read_power tool and HPL program in the same directory.
 
 Some parameter in scripts should be changed on different machine.
 
